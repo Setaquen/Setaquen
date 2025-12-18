@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Setaquen — programming, web development and Minecraft modding updates." />
+        <title>Setaquen</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-</head>
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <a class="brand" href="index.html">Setaquen</a>
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="AboutMe.html">About</a>
+                    <a href="Blog.html">Minecraft</a>
+                    <a href="https://www.youtube.com/@Setaquen" target="_blank" rel="noopener">YouTube</a>
+                    <button class="contact-toggle" aria-expanded="false" aria-controls="contact-box">Contact</button>
+                </nav>
+                <button class="mobile-nav-toggle" aria-label="Open navigation">☰</button>
+            </div>
+        </header>
 
-<body>
-    
-    <div class="boxdiv">
+        <main>
+            <section class="hero">
+                <div class="container hero-inner">
+                    <h1 class="hero-title">Hello — I’m Setaquen</h1>
+                    <p class="hero-sub">This is a personal site to showcase projects and share thoughts on programming, web development, and game design.</p>
 
-        <header>Setaquen</header>
+                    <div class="cta-row">
+                        <a class="btn primary" href="Blog.html">Minecraft Modding Updates 🟦</a>
+                        <a class="btn" href="https://www.youtube.com/@Setaquen" target="_blank" rel="noopener">My YouTube ▶️</a>
+                        <a class="btn" href="AboutMe.html">About Me 👤</a>
+                    </div>
+                </div>
+            </section>
 
-        <p class="intro">
-            Hello! This is Setaquen, a personal website created to showcase my projects
-            and share my thoughts on various topics.<br>
-            Feel free to explore and connect with me! 💜
-        </p>
+            <section class="features container">
+                <article>
+                    <h2>About</h2>
+                    <p>Hello! This is Setaquen, a personal website created to showcase my projects and share my thoughts on various topics. Feel free to explore and connect with me! 💜</p>
+                </article>
 
-        <p class="big_gap">
-            <button class="btn" onclick="window.location.href='Blog.html'">
-                <h1>Minecraft Modding Updates! 🟦</h1>
-            </button>
-        </p>
+                <article>
+                    <h2>Latest</h2>
+                    <p>Check the Minecraft Modding page for updates and notes on ongoing projects.</p>
+                    <p><a href="Blog.html">Read updates →</a></p>
+                </article>
+            </section>
+        </main>
 
-        <p class="big_gap" style="top: 240px;">
-            <button class="btn" onclick="window.location.href='https://www.youtube.com/@Setaquen'">
-                <h1>My Silly Youtube Channel! ▶️</h1>
-            </button>
-        </p>
+        <aside id="contact-box" class="contact-box" hidden>
+            <div class="container">
+                <h3>Contact</h3>
+                <p>You can reach me using the links below.</p>
+                <p class="contact-links">
+                    <a href="mailto:setaquen@gmail.com" class="icon-link">📧 Email</a>
+                    <a href="discord://-/users/1428275977493942423" class="icon-link">💬 Discord</a>
+                    <a href="https://bsky.app/profile/setaquen.bsky.social" target="_blank" rel="noopener" class="icon-link">🔗 Bluesky</a>
+                </p>
+            </div>
+        </aside>
 
-        <p class="big_gap" style="top: 330px;">
-            <button class="btn" onclick="window.location.href='AboutMe.html'">
-                <h1>About Me! 👤</h1>
-            </button>
-        </p>
-        
-        <p class="big_gap" style="top: 420px;">
-            <button class="btn top" onclick="slideBox()">
-                <h1>Contact Me! 📧</h1>
-            </button>
-        </p>
-        <button id="box" class="box bottom"> 
-            <a href="mailto:setaquen@gmail.com"><img src="mail_icon.png" style="width:60px;height:60px; padding-left: 5px; padding-right: 5px;"></a>
-            <a href="discord://-/users/1428275977493942423" ><img src="discord.png" style="width:60px;height:60px; padding-left: 5px; padding-right: 5px;"></a>
-            <a href="https://bsky.app/profile/setaquen.bsky.social" ><img src="blsky.png" style="width:60px;height:60px; padding-left: 5px; padding-right: 5px;"></a>
-        </button>
-        
-        
-    </div>
-    <script src="script.js"></script>
-</body>
+        <footer class="site-footer">
+            <div class="container">
+                <small>© Setaquen — All content provided by the site owner.</small>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
 </html>
