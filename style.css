@@ -48,6 +48,25 @@ html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -app
 .mobile-nav-toggle{display:block;background:transparent;border:0;color:var(--muted);font-size:20px;margin-left:8px;padding:8px;border-radius:8px}
 .mobile-nav-toggle:focus{outline:3px solid rgba(0,174,255,0.25);outline-offset:2px}
 
+/* Ensure nav button is always above garland on mobile and with Christmas theme */
+@media (max-width:800px){
+  .mobile-nav-toggle{
+    position:relative;
+    z-index:10002 !important;
+    background:rgba(255,255,255,0.15);
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    margin-top:8px;
+  }
+  body[data-season="christmas"] .mobile-nav-toggle{
+    background:rgba(255,255,255,0.25);
+    color:#d72631;
+    border:1.5px solid #d72631;
+  }
+}
+@media (max-width:480px){
+  .mobile-nav-toggle{margin-top:12px;}
+}
+
 .hero{padding:72px 0;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
 .hero-inner{display:flex;flex-direction:column;gap:16px}
 .hero-title{font-size:44px;margin:0;line-height:1.02}

@@ -105,19 +105,32 @@ document.addEventListener('DOMContentLoaded', function(){
             document.body.appendChild(snow);
 
             const isLightTheme = document.body.getAttribute('data-theme') === 'light';
-            const flakes = isLightTheme ? 18 : 28;
+            const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+            const vw = window.innerWidth || document.documentElement.clientWidth || 1024;
+            let flakes = isLightTheme ? 18 : 28;
+            // Reduce flakes on touch devices or small viewports to preserve battery/CPU
+            if(isTouch || vw <= 600){
+                flakes = Math.max(6, Math.round(flakes * 0.35));
+            } else if(vw <= 900){
+                flakes = Math.max(8, Math.round(flakes * 0.6));
+            } else if(vw > 1400){
+                flakes = Math.round(flakes * 1.15);
+            }
+
             for(let i=0;i<flakes;i++){
                 const f = document.createElement('div');
                 f.className = 'snowflake';
                 f.style.left = Math.random()*100 + '%';
                 f.style.animationDelay = (Math.random()*10)+'s';
                 f.style.opacity = (0.5 + Math.random()*0.5).toString();
-                f.style.fontSize = (8 + Math.random()*18) + 'px';
+                const size = Math.round(6 + Math.random()*18);
+                f.style.fontSize = size + 'px';
                 f.style.animationDuration = (6 + Math.random()*8) + 's';
+                f.style.willChange = 'transform';
                 f.textContent = isLightTheme ? '❅' : '❄';
                 if(isLightTheme){
                     f.style.color = '#154525';
-                    f.style.textShadow = '0 1px 0 rgba(255,255,255,0.8)';
+                    f.style.textShadow = '0 1px 0 rgba(255,255,255,0.9)';
                 } else {
                     f.style.color = 'white';
                     f.style.textShadow = '0 1px 2px rgba(0,0,0,0.6)';
