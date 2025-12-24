@@ -64,7 +64,7 @@ html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -app
   }
 }
 @media (max-width:480px){
-  .mobile-nav-toggle{top:18px;right:12px}
+  .mobile-nav-toggle{margin-top:12px}
 }
 
 .hero{padding:72px 0;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
@@ -100,10 +100,9 @@ a:focus{outline:3px solid rgba(0,174,255,0.25);outline-offset:2px}
 @media (max-width:800px){
   .features{grid-template-columns:1fr}
   .hero-sub{max-width:100%}
-  .site-header{padding:18px 0} /* make room for absolutely positioned toggle */
-  .mobile-nav-toggle{display:block;position:absolute;top:14px;right:12px;margin-left:0;margin-top:0;z-index:10002}
+  .mobile-nav-toggle{display:block;margin-left:auto}
   /* Mobile overlay nav */
-  .site-nav{display:none;position:absolute;top:64px;right:12px;left:12px;padding:12px;border-radius:12px;background:var(--card-bg);box-shadow:0 12px 30px rgba(0,0,0,0.25);transition:transform 220ms var(--transition-fast), opacity 220ms var(--transition-fast);transform-origin:top;opacity:0;transform:translateY(-8px) scaleY(0.98);flex-direction:column;gap:12px;z-index:999}
+  .site-nav{display:none;position:absolute;top:64px;right:12px;left:12px;padding:12px;border-radius:12px;background:rgba(6,8,10,0.96);box-shadow:0 12px 30px rgba(0,0,0,0.25);transition:transform 220ms var(--transition-fast), opacity 220ms var(--transition-fast);transform-origin:top;opacity:0;transform:translateY(-8px) scaleY(0.98);flex-direction:column;gap:12px;z-index:10003}
   .site-nav.open{display:flex;opacity:1;transform:translateY(0) scaleY(1)}
   .site-nav a{padding:12px 16px}
   .hero{padding:36px 0}
@@ -111,6 +110,9 @@ a:focus{outline:3px solid rgba(0,174,255,0.25);outline-offset:2px}
   .contact-box{right:12px;left:12px;bottom:12px;max-width:none;padding:16px}
   .site-header .container{padding:0 12px}
 }
+
+/* Ensure overlay nav is opaque in light theme */
+body[data-theme="light"] .site-nav{background:rgba(255,255,255,0.96);color:var(--text)}
 
 @media (max-width:480px){
   .hero-title{font-size:28px}
